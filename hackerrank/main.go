@@ -45,3 +45,17 @@ func LeftRotation(array []int, n int, d int) {
 	}
 	return array
 }
+
+// SparseArrays strings is array to query from, queries is array of those queries to search from strings
+func SparseArrays(strings []string, queries []string) (answer []int) {
+	for _, query := range queries {
+		found := 0
+		for _, matchWith := range strings {
+			if query == matchWith {
+				found++
+			}
+		}
+		answer = append(answer, found)
+	}
+	return answer
+}
